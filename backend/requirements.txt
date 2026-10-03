@@ -1,0 +1,8 @@
+fastapi
+pydantic-settings
+uvicorn[standard]
+langchain-text-splitters
+pypdf
+langchain-huggingface
+langchain-chroma
+langchain-google-genai
