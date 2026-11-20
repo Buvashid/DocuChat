@@ -28,3 +28,17 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Unrelated project accidentally placed in DocuChat
+/wantace/
+/project-tree.txt
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+
+# Python virtual environments
+env/
+
+# Example environment configuration may be committed
+!.env.example
