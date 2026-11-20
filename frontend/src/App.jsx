@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import React from "react";
 import "./App.css";
 import { useRef, useState } from "react";
+
 import {
   FileText,
   MessageSquare,
@@ -20,6 +21,9 @@ import {
   BookOpen,
   CheckCircle2,
 } from "lucide-react";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
 const suggestions = [
   {
@@ -92,7 +96,7 @@ function App() {
         formData.append("file", file);
 
         const response = await fetch(
-          "http://127.0.0.1:8000/documents/upload",
+          `${API_BASE_URL}/documents/upload`,
           {
             method: "POST",
             body: formData,
@@ -162,7 +166,7 @@ setActiveDocument(newDocument);
     setSending(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/chat/", {
+      const response = await fetch(`${API_BASE_URL}/chat/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
